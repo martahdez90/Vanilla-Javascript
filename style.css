@@ -1,0 +1,9 @@
+/* Variables en css */
+
+body {
+    --rojo: rgb(32, 143, 124);
+}
+
+.h1 {
+    color: var(--rojo)
+}
