@@ -1,9 +1,22 @@
 /* Variables en css */
 
 body {
-    --rojo: rgb(32, 143, 124);
+    --rojo: rgb(202, 36, 119);
 }
 
 .h1 {
     color: var(--rojo)
+}
+.center {
+    margin: 20px;
+    padding: 20px;
+    color: var(--rojo);
+    border: 2px crimson solid;
+}
+
+.texto {
+    text-align: center;
+    color: var(--rojo);
+    margin: 2rem;
+    padding: 2rem;
 }
