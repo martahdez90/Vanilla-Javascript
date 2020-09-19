@@ -40,12 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
+   
+    
     let cardsChosen = []
     let cardsChosenId = []
     const cardsWon = []
 
-    //alertas 
-
+    //tiempo
+    let timer = 0;
+        setInterval(() => {
+            timer++;
+            console.log(timer)
+    }, 1000)
+    document.querySelector('#timer').textContent = timer;
+      //contador
+    var counter = 0;
+    document.querySelector('#counter').textContent = counter;
 
     // Crear tablero
     function createBoard() {
@@ -59,12 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // //check for matches
+   
+
+    //check for matches
     function checkForMatch() {
 
         let cards = document.querySelectorAll('img')
         const optionOneId = cardsChosenId[0]
+        console.log(counter)
         const optionTwoId = cardsChosenId[1]
+       
 
         if (optionOneId == optionTwoId) {
             let img1 = cards[optionOneId].setAttribute('src', './images/colors.svg')
@@ -109,14 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
     //flip your card
     function flipCard() {
         let cardId = this.getAttribute('data-id')
-
         cardsChosen.push(cardArray[cardId].name)
         cardsChosenId.push(cardId)
         this.setAttribute('src', cardArray[cardId].img)
-
+        counter++;
+        document.querySelector('#counter').textContent = counter;
         if (cardsChosen.length === 2) {
             setTimeout(checkForMatch, 500)
         }
+
     }
 
     createBoard()
