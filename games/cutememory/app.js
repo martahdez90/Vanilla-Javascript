@@ -35,25 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const cardArray = [wizard, dwarf, elf, queen, prince, frogPrince, fairy, unicorn, wizard, dwarf, elf, queen, prince, frogPrince, fairy, unicorn]
+    // const cardArray = [wizard, dwarf, wizard, dwarf]
 
-    //cardArray.sort(() => 0.5 - Math.random())
+    cardArray.sort(() => 0.5 - Math.random())
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
-   
-    
+
+
     let cardsChosen = []
     let cardsChosenId = []
     const cardsWon = []
 
     //tiempo
     let timer = 0;
-        setInterval(() => {
-            timer++;
-            console.log(timer)
+    setInterval(() => {
+        timer++;
+        console.log(timer)
+        document.querySelector('#timer').textContent = timer;
     }, 1000)
-    document.querySelector('#timer').textContent = timer;
-      //contador
+
+
+    //contador
     var counter = 0;
     document.querySelector('#counter').textContent = counter;
 
@@ -69,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-   
+
 
     //check for matches
     function checkForMatch() {
@@ -78,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionOneId = cardsChosenId[0]
         console.log(counter)
         const optionTwoId = cardsChosenId[1]
-       
+
 
         if (optionOneId == optionTwoId) {
             let img1 = cards[optionOneId].setAttribute('src', './images/colors.svg')
@@ -115,8 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: '¡Enhorabuena!',
                 text: 'Lo has conseguido',
                 icon: 'success',
-                confirmButtonText: '¡Voy!'
+                confirmButtonText: '¡Bien!'
+            }).then(() => {
+                 window.location.reload();
             })
+           
         }
     }
 
