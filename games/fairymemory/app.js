@@ -37,7 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardArray = [wizard, dwarf, elf, queen, prince, frogPrince, fairy, unicorn, wizard, dwarf, elf, queen, prince, frogPrince, fairy, unicorn]
     // const cardArray = [wizard, dwarf, wizard, dwarf]
 
-    cardArray.sort(() => 0.5 - Math.random())
+    function sortCards() {
+        cardArray.sort(() => 0.5 - Math.random())
+    }
+
+    sortCards()
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')

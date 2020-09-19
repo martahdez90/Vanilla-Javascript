@@ -64,10 +64,10 @@ h4 {
 
 @media (max-width: 450px) {
     .mystyle{
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
     }
     .grid {
-        width: 100vw;
+        width: 300px;
     }
 }
